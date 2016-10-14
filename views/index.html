@@ -1,19 +1,65 @@
 {%- set Page = {
 
 	"title": "Заголовок страницы",
-	"description": "Описание страницы"
-
+	"description": "Описание страницы",
+	"slider": [
+		{
+			"title": "Полаир сегодня",
+			"text": "Международная компания, специализирующаяся на&nbsp;производстве и&nbsp;дистрибуции профессионального оборудования для предприятий торговли, общепита и&nbsp;индустрии гостеприимства",
+			"img": "hero.jpg"
+		},
+		{
+			"title": "Полаир сегодня",
+			"text": "Международная компания, специализирующаяся на&nbsp;производстве и&nbsp;дистрибуции профессионального оборудования для предприятий торговли, общепита и&nbsp;индустрии гостеприимства",
+			"img": "hero.jpg"
+		},
+		{
+			"title": "Полаир сегодня",
+			"text": "Международная компания, специализирующаяся на&nbsp;производстве и&nbsp;дистрибуции профессионального оборудования для предприятий торговли, общепита и&nbsp;индустрии гостеприимства",
+			"img": "hero.jpg"
+		}
+	]
 } -%}
 {% extends "layout.html" %}
 {% block content %}
-	<section class="l-section">
-		<div class="l-container">
-		<div class="c-title">{{ Page.title }}</div>
-		<div class="l-row">
-			<div class="l-col--xs-5">Тома лапочка =)</div>
-			<div class="l-col--xs-5">сетка</div>
-			<div class="l-col--xs-2">сетка</div>
+	<div class="c-hero">
+		<header class="c-header">
+			<div class="l-container">
+				<div class="c-header__logo">
+					<img src="../images/logo.png" alt="Polair">
+				</div>
+			</div>
+		</header>
+		<div class="c-hero__slider">
+		{%- for item in Page.slider  -%}
+			<div class="c-hero__slider-item" style="background-image: url('../images/{{ item.img }}')">
+				<div class="l-container">
+					<div class="c-hero__content">
+						<div class="c-hero__content-inner">
+							<h2 class="c-hero__title">{{ item.title|safe }}</h2>
+							<div class="c-hero__text">{{ item.text|safe }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{%- endfor -%}
 		</div>
 	</div>
-	</section>
+	<div class="c-section">
+		<div class="l-container">
+			<h2 class="c-title">Торговые марки</h2>
+		</div>
+	</div>
+
+	<div class="c-section c-section--greedy">
+		<div class="l-container">
+			<h2 class="c-title">Торговые марки</h2>
+			<div class="l-row">
+				<div class="l-col--md-6">
+					<h3 class="c-title c-title--sm"></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 {% endblock %}
