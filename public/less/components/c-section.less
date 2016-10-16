@@ -1,0 +1,56 @@
+.c-section {
+	padding: 60px 0;
+	position: relative;
+	z-index: 1;
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 26px;
+		left: 0;
+		width: 100%;
+		background-color: transparent;
+		background-repeat: repeat-x;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	&:before {
+		top: -26px;
+		background-image: url('../images/wave-top.png');
+		background-position: -200px bottom;
+	}
+
+	&:after {
+		bottom: -26px;
+		background-image: url('../images/wave-bottom.png');
+		background-position: 0 0;
+	}
+
+	&--squares {
+		height: 600px;
+		position: relative;
+		background-color: #000;
+		z-index: 0;
+		overflow: hidden;
+
+		&:before,
+		&:after {
+			
+		}
+
+		&:before {
+			transform: translateX(50%) skewX(-15deg);
+			background: url('../images/hero.jpg') no-repeat center top fixed;
+			background-size: cover;
+		}
+
+		&:after {
+			transform: translateX(-50%) skewX(-15deg);
+			background: url('../images/hero.jpg') no-repeat center top fixed;
+			background-size: cover;
+		}
+	}
+}

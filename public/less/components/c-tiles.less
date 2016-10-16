@@ -1,0 +1,138 @@
+.c-tiles {
+
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+
+
+	&-section {
+		padding: 60px 0;
+		background: url(../images/tiles-bg.jpg) no-repeat center center fixed;
+		background-size: cover;
+		min-height: 600px;
+	}
+
+
+
+	&__item {
+		display: block;
+		flex: 0 0 31.333%;
+		margin-left: 1%;
+		margin-right: 1%;
+		margin-bottom: 20px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 100px;
+		padding-bottom: 150px;
+		order: 0;
+		position: relative;
+		border-radius: 10px;
+		overflow: hidden;
+		background-color: #d5e1eb;
+
+		text-decoration: none;
+
+		&--small {
+			flex-basis: 14.666%;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 100px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		overflow: hidden;
+
+		transition: transform .3s ease-in-out;
+
+	}
+
+	&__item--small &__img {
+		top: 0;
+	}
+
+	&__top {
+		background-color: #fff;
+		padding: 18px 20px  5px 20px;
+		height: 100px;
+		overflow: hidden;
+		display: block;
+		z-index: 1;
+		position: relative;
+	}
+
+	&__title {
+		.fz(20, 22);
+		display: block;
+		font-weight: bold;
+		margin-bottom: round(10/20em, 3);
+		color: #373f43;
+		transition: color .3s;
+	}
+
+	&__text {
+		font-size: 11px;
+		line-height: 13px;
+		color: #899095;
+		display: block;
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: 10px;
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: #fff;
+		font-size: 13px;
+		text-decoration: underline;
+		color: #ef8c19;
+		border-radius: 0 6px 6px 0;
+		transition: all .3s ease-in-out;
+	}
+
+	&__item:hover &__title {
+		color: #ef8c19;
+		text-decoration: underline;
+	}
+
+	&__item:hover &__btn {
+		color: #fff;
+		background-color: #ef8c19;
+	}
+
+	
+
+	@media screen and (max-width: 1200px) {
+		&__item {
+			flex: 0 0 48%;
+
+			&--small {
+				flex-basis: 23%;
+				order: 1;
+			}
+		}
+	}
+
+	@media screen and (max-width: 680px) {
+		&__item {
+			flex: 0 0 100%;
+			margin-left: 0;
+			margin-right: 0;
+
+			&--small {
+				flex-basis: 48%;
+				margin-left: 1%;
+				margin-right: 1%;
+				order: 1;
+			}
+		}
+	}
+}

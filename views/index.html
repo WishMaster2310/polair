@@ -1,7 +1,7 @@
 {%- set Page = {
 
-	"title": "Заголовок страницы",
-	"description": "Описание страницы",
+	"title": "ГК Полаир",
+	"description": "Международная компания, специализирующаяся на производстве и дистрибуции профессионального оборудования для предприятий торговли, общепита и индустрии гостеприимства",
 	"slider": [
 		{
 			"title": "Полаир сегодня",
@@ -9,14 +9,108 @@
 			"img": "hero.jpg"
 		},
 		{
-			"title": "Полаир сегодня",
+			"title": "Полаир завтра",
 			"text": "Международная компания, специализирующаяся на&nbsp;производстве и&nbsp;дистрибуции профессионального оборудования для предприятий торговли, общепита и&nbsp;индустрии гостеприимства",
 			"img": "hero.jpg"
 		},
 		{
-			"title": "Полаир сегодня",
+			"title": "Полаир всегда",
 			"text": "Международная компания, специализирующаяся на&nbsp;производстве и&nbsp;дистрибуции профессионального оборудования для предприятий торговли, общепита и&nbsp;индустрии гостеприимства",
 			"img": "hero.jpg"
+		}
+	],
+	"tms": [
+		{
+			"text": "Крупнейший российский производитель про&shy;фес&shy;сиональ&shy;ного оборудования для предприятий общественного питания и торговли, с внушительной продуктовой линейкой и обширной географией продаж.",
+			"logo": "pr1-logo.png",
+			"logo2": "pr1-logo-white.png",
+			"link": "http://www.polairgroup.ru/ru/trademarks/production/polair/"
+		},
+		{
+			"text": "Крупнейший российский производитель про&shy;фес&shy;сиональ&shy;ного оборудования для предприятий общественного питания и торговли, с внушительной продуктовой линейкой и обширной географией продаж.",
+			"logo": "pr2-logo.png",
+			"logo2": "pr2-logo-white.png",
+			"link": "#"
+		},
+		{
+			"text": "Крупнейший российский производитель про&shy;фес&shy;сиональ&shy;ного оборудования для предприятий общественного питания и торговли, с внушительной продуктовой линейкой и обширной географией продаж.",
+			"logo": "pr4-logo.png",
+			"logo2": "pr4-logo-white.png",
+			"link": "#"
+		},
+		{
+			"text": "Крупнейший российский производитель про&shy;фес&shy;сиональ&shy;ного оборудования для предприятий общественного питания и торговли, с внушительной продуктовой линейкой и обширной географией продаж.",
+			"logo": "pr3-logo.png",
+			"logo2": "pr3-logo-white.png",
+			"link": "#"
+		}
+	],
+	"tiles": [
+		{
+			"title": "Энергоэффективность",
+			"text": "ГК ПОЛАИР активно внедряет энергосберегающие технологии.",
+			"url": "#",
+			"img": "tiles-1.jpg"
+		},
+		{
+			"title": "Социальные проекты",
+			"text": "ГК ПОЛАИР обеспечивает максимальную безопасность производства и заботится об улучшении условий труда своих сотрудников",
+			"url": "#",
+			"img": "tiles-2.jpg"
+		},
+		{
+			"title": "Календарь активностей",
+			"text": "Самые актуальные материалы о событиях и работе нашей компании",
+			"url": "#",
+			"img": "tiles-3.jpg"
+		},
+		{
+			"title": "Реализованные проекты",
+			"text": "Реализованные проекты ГК ПОЛАИР",
+			"url": "#",
+			"img": "tiles-4.jpg"
+		},
+		{
+			"title": "",
+			"text": "",
+			"url": "#",
+			"img": "tiles-5.jpg",
+			"small": true
+		},
+		{
+			"title": "",
+			"text": "",
+			"url": "#",
+			"img": "tiles-6.jpg",
+			"small": true
+		},
+		{
+			"title": "Сертификаты",
+			"text": "",
+			"url": "#",
+			"img": "tiles-7.jpg"
+		}
+	],
+	"news": [
+		{
+			"link": "Наш завод занял 3-е место в номинации «ЭКСПОРТЕР ГОДА»",
+			"text": "С присвоением звания «IMPORT EXPORT AWARD»",
+			"date": "27 августа"
+		},
+		{
+			"link": "С 1 августа 2016 года",
+			"text": "Мы сокращаем сроки производства холодильных камер!",
+			"date": "12 августа"
+		},
+		{
+			"link": "Наш завод занял 3-е место в номинации «ЭКСПОРТЕР ГОДА»",
+			"text": "С присвоением звания «IMPORT EXPORT AWARD»",
+			"date": "15 июля"
+		},
+		{
+			"link": "Изменяется срок производства столов с выдвижными ящиками",
+			"text": "До 35 рабочих дней!",
+			"date": "28 июня"
 		}
 	]
 } -%}
@@ -45,21 +139,129 @@
 		{%- endfor -%}
 		</div>
 	</div>
-	<div class="c-section">
+	<section class="c-section">
 		<div class="l-container">
 			<h2 class="c-title">Торговые марки</h2>
+			<div class="c-trademarks">
+			{%- for item in Page.tms -%}
+				<a href="{{ item.link }}" class="c-trademarks__item">
+					<span class="c-trademarks__logo">
+						<img src="../images/{{ item.logo }}" class="c-trademarks__logo-main" alt="">
+						<img src="../images/{{ item.logo2 }}" class="c-trademarks__logo-sec" alt="">
+					</span>
+					<span class="c-trademarks__text">
+						{{ item.text|safe }}
+					</span>
+				</a>
+			{%- endfor -%}
+			</div>	
 		</div>
-	</div>
+	</section>
 
-	<div class="c-section c-section--greedy">
+	<section class="c-slicer">
+		
+		<div class="l-container c-slicer__inner">
+			<h2 class="c-title">Производственные площадки</h2>
+			<div class="c-place__col">
+				<a class="c-place" href="#">
+					<span class="c-place__title">Завод <br>совиталпродмаш</span>
+					<span class="c-place__text">Оборудование торговой марки POLAIR выпускается на заводе «Совиталпродмаш» - крупнейшем в Европе современном высокоавтоматизированном производственном комплексе.</span>
+					<span class="c-place__link">Подробнее</span>
+				</a>
+				<div class="c-slicer__bg c-slicer__bg--last"></div>
+			</div>
+			<div class="c-place__col">
+				<a class="c-place" href="#">
+					<span class="c-place__title">Завод полюс</span>
+					<span class="c-place__text">Оборудование торговой марки POLAIR выпускается на заводе «Совиталпродмаш» - крупнейшем в Европе современном высокоавтоматизированном производственном комплексе.</span>
+					<span class="c-place__link">Подробнее</span>
+				</a>
+				<div class="c-slicer__bg c-slicer__bg--first"></div>
+			</div>
+			
+
+			
+		</div>
+	</section>
+
+	<section class="c-section c-section--greedy">
 		<div class="l-container">
-			<h2 class="c-title">Торговые марки</h2>
-			<div class="l-row">
-				<div class="l-col--md-6">
-					<h3 class="c-title c-title--sm"></h3>
-				</div>
+			<h2 class="c-title">Представительства</h2>
+			<img src="../images/map.jpg" class="c-img" alt="">
+		</div>
+	</section>
+
+	<section class="c-tiles-section">
+		<div class="l-container">
+			<div class="c-tiles">
+				{%- for tile in Page.tiles -%}
+				{%- if tile.small -%}
+				<a class="c-tiles__item c-tiles__item--small" href="{{ tile.url }}">
+					<span class="c-tiles__img" style="background-image: url(../images/{{ tile.img }})"></span>
+				</a>
+				{% else %}
+				<a class="c-tiles__item" href="{{ tile.url }}">
+					<span class="c-tiles__img" style="background-image: url(../images/{{ tile.img }})"></span>
+					<span class="c-tiles__top">
+						<span class="c-tiles__title">{{ tile.title }}</span>
+						<span class="c-tiles__text">{{ tile.text }}</span>
+					</span>
+					<span class="c-tiles__btn">Подробнее</span>
+				</a>
+				{%- endif -%}
+				
+				{%- endfor -%}
 			</div>
 		</div>
-	</div>
+	</section>
+
+	<section class="c-section c-section--greedy">
+		<div class="l-container">
+			<h2 class="c-title">Новости ГК Полаир</h2>
+			<div class="c-news">
+				{%- for news in Page.news -%}
+				<div class="c-news__item">
+					<div class="c-news__date">{{news.date}}</div>
+					<div><a href="#" class="c-news__link">{{news.link}}</a></div>
+					
+					<div class="c-news__text">{{ news.text }}</div>
+				</div>
+				{%- endfor -%}
+			</div>
+		</div>
+	</section>
+
+	<footer class="c-footer">
+		<div class="l-container">
+			<div class="c-footer__row">
+				<div class="c-footer__col">
+					<p class="c-footer__copy">
+					© ООО «Торговый Дом ПОЛАИР», 2011-2016 <br>
+					Адрес: 119334, г. Москва,<br>
+					Ленинский проспект, д. 37, корп. 1<br>
+					Телефон: <a href="tel:+74959376407">+7 (495) 937-64-07</a></p>
+				</div>
+				<div class="c-footer__col c-footer__col--center">
+					<div class="c-footer__nav">
+						<a href="#">ПРОИЗВОДСТВО</a>
+						<a href="#">ТОРГОВЫЕ МАРКИ</a>
+						<a href="#">ГЕОГРАФИЯ БИЗНЕСА</a>
+					</div>
+				</div>
+				<div class="c-footer__col">
+					<div class="c-footer__links">
+						<a href="#" class="c-footer__link"></a>
+						<a href="#" class="c-footer__link"></a>
+						<a href="#" class="c-footer__link"></a>
+						<a href="#" class="c-footer__link"></a>
+					</div>
+					<div class="c-footer__devcopy">
+						Создание сайта — HCube
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</footer>
 	
 {% endblock %}

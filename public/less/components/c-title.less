@@ -1,0 +1,29 @@
+.c-title {
+	.fz(56, 56);
+	font-family: @sec-font;
+	text-align: center;
+	position: relative;
+	padding-bottom: round(22/56em, 3);
+	margin-bottom: round(30/56em, 3);
+	letter-spacing: -.02em;
+	
+	&:after  {
+		height: 2px;
+		width: round(106/56em, 3);
+		position: absolute;
+		bottom: 0;
+		display: block;
+		content: "";
+		background-color: #ef8c19;
+		left: 50%;
+		margin-left: round(-58/56em, 3)
+	}
+
+	@media screen and(max-width: 1000px) {
+		.fz(40, 40);
+	}
+
+	@media screen and(max-width: 768px) {
+		.fz(32, 32);
+	}
+}

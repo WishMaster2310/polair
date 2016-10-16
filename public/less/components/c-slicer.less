@@ -1,0 +1,85 @@
+.c-slicer {
+	position: relative;
+	height: 500px;
+	z-index: 0;
+	padding: 60px 0;
+	overflow: hidden;
+
+	.c-title {
+		z-index: 1;
+	}
+
+	&__bg {
+		position: absolute;
+		display: block;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: none;
+		overflow: hidden;
+
+		&:after {
+			background-color: fade(#fff, 80%);
+			transition: opacity .4s;
+			opacity: 1;
+			will-change: opacity;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 75%;
+			height: 100%;
+		}
+
+		&--first {
+			transform: translateX(50%) skewX(-15deg);
+			background-size: cover;
+
+			&:before {
+				transform: translateX(-25%) skewX(15deg);
+				background: url('../images/slicer-right.jpg') no-repeat center top fixed;
+				background-size: cover;
+			}
+
+		}
+
+		&--last{
+			transform: translateX(-50%) skewX(-15deg);
+
+			&:before {
+				transform: translateX(50%) skewX(15deg);
+				background: url('../images/slicer-left.jpg') no-repeat -300px top fixed;
+				background-size: cover;
+
+
+			}
+
+			&:after{
+				transform: translateX(50%);
+			}
+		}
+	}
+
+	@media screen and(max-width: 968px) {
+		padding: 25px 0;
+
+		height: auto;
+		&__bg {
+			transform: none !important;
+
+			&:before,
+			&:after {
+				transform: none !important;
+				width: 100%;
+				background-position: 0 0 !important;
+			}
+		}
+	}
+}
